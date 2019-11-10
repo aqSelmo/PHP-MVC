@@ -41,4 +41,23 @@
 			}
 		});
 	}
+	window.passwordVerify = (pass1, pass2)=>{
+		let a = $('[name="'+pass1+'"]').val();
+		let b = $('[name="'+pass2+'"]').val();
+		
+		if(a != b){
+			$('[name="'+pass2+'"]').removeClass('border-secondary'),
+			$('[name="'+pass2+'"]').addClass('border-danger')
+		} else{
+			$('[name="'+pass2+'"]').removeClass('border-danger'),
+			$('[name="'+pass2+'"]').addClass('border-success')
+		}
+		
+	}
+	if($('[type=file]').length){
+		$('[type=file]').fileselect({
+			browseBtnClass: 'btn bg-1 rounded-0 text-light',
+			language : "br"
+		})
+	}
 })($,document,window)
