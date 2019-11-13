@@ -14,7 +14,7 @@ class Login extends Defaults{
 				"email" => $args['email']
 			));
 			
-			return $this->row("SELECT a.email, b.hash FROM administracao a LEFT JOIN sessions b ON a.id = b.a_id WHERE a.email LIKE :email AND a.password LIKE :password LIMIT 1", array(
+			return $this->row("SELECT a.email, b.hash, a.avatar FROM administracao a LEFT JOIN sessions b ON a.id = b.a_id WHERE a.email LIKE :email AND a.password LIKE :password LIMIT 1", array(
 				"email" => $args['email'],
 				"password" => $args['password']
 			));

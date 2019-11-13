@@ -41,11 +41,12 @@
 					<div class="col-4">
 						<div class="border shadow py-4 h-100">
 							<div class="d-flex flex-column align-items-center justify-content-center h-100">
-								<a class="mb-3" href="uploads" data-fancybox data-caption="<?=$administrador['title']?>">
+								<a class="mb-3" href="/uploads/<?=$_SESSION['avatar']?>" data-fancybox data-caption="<?=$administrador['title']?>">
 									<div class="admin-avatar-dashboard border rounded-circle overflow-hidden">
-										<img class="w-100 h-100" src="uploads/">
+										<img class="w-100 h-100" src="/uploads/<?=$_SESSION['avatar']?>">
 									</div>
 								</a>
+								<p class="mb-1"><?=$administrador['title']?></p>
 								<a class="btn bg-1 rounded-0 text-light" href="perfil/alterar/<?=$administrador['id']?>">Editar perfil</a>
 							</div>
 						</div>

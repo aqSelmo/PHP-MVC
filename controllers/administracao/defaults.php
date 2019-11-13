@@ -22,10 +22,6 @@ class Defaults {
 		
 		if(move_uploaded_file($args['tmp_name'], $uploads . $src)){
 			return $src;
-		} else {
-			throw new Exception("Não foi possível salvar o arquivos");
 		}
-		
 	}
-	
 }

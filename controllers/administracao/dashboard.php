@@ -20,4 +20,5 @@ class Dashboard extends Defaults{
 			"administrador" => $this->model->administrador()
 		));
 	}
+	
 }

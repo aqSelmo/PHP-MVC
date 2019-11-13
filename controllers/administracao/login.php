@@ -34,6 +34,7 @@ class Login {
 		if(isset($result) && $result) {
 			$_SESSION['admin'] = $result['email'];
 			$_SESSION['hash'] = $result['hash'];
+			$_SESSION['avatar'] = $result['avatar'];
 			header("Location: /administracao");
 		} else {
 			Render::load("administracao/login", array(
