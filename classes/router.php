@@ -26,8 +26,13 @@ class Router {
 
 			$this->url = $url;
 			$this->folder = $folder;
-			$this->controller = $controller;
-			$this->method = $method;
+			if(class_exists($controller)){
+				$this->controller = $controller;
+				$this->method = $method;
+			} else {
+				header("Location: /home");
+			}
+			
 			$this->args = $args;	
 	}
 	
