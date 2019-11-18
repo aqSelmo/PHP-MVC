@@ -3,20 +3,20 @@
 namespace Guilherme\Classes;
 
 class Router {
-	public $url;
-	public $folder;
-	public $controller;
-	public $method;
-	public $args;
+	private $url;
+	private $folder;
+	private $controller;
+	private $method;
+	private $args;
 	
 	public function __construct()
 	{
 		$this->init();
-		$c = new $this->controller;
-		call_user_func_array(array($c, $this->method), array($this->args));
+		$classe = new $this->controller;
+		call_user_func_array(array($classe, $this->method), array($this->args));
 	}
 	
-	public function init()
+	private function init()
 	{
 			$url = explode("/", trim($_SERVER['REQUEST_URI']));
 			$folder = (isset($url[1]) && $url[1] ? ucfirst($url[1]) : 'Home');

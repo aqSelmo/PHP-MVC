@@ -35,6 +35,13 @@ class Db extends PDO{
 		return $stmt;
 	}
 	
+	public function single($rawQuery, $params = array())
+	{
+		$stmt = $this->query($rawQuery, $params);
+		
+		return $stmt->fetchColumn();
+	}
+	
 	public function row($rawQuery, $params = array())
 	{
 		$stmt = $this->query($rawQuery, $params);
